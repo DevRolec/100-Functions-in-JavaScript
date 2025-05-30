@@ -16,9 +16,7 @@ In JavaScript, there are several types of functions, each serving different purp
 1. Named Function (Function Declaration)
 A standard function with a name.
 
-javascript
-Copy
-Edit
+
 function greet() {
   console.log("Hello!");
 }
@@ -27,9 +25,7 @@ function greet() {
 2. Anonymous Function (Function Expression)
 A function without a name, assigned to a variable.
 
-javascript
-Copy
-Edit
+
 const sayHello = function() {
   console.log("Hello!");
 };
@@ -38,18 +34,14 @@ const sayHello = function() {
 3. Arrow Function (ES6+)
 A shorter way to write functions. Best for simple tasks.
 
-javascript
-Copy
-Edit
+
 const add = (a, b) => a + b;
 ⚠️ Doesn’t have its own this, so avoid for object methods or constructors.
 
 4. Immediately Invoked Function Expression (IIFE)
 A function that runs immediately after it’s defined.
 
-javascript
-Copy
-Edit
+
 (function() {
   console.log("I run instantly!");
 })();
@@ -58,9 +50,7 @@ Useful for creating a private scope.
 5. Constructor Function
 Used with the new keyword to create objects.
 
-javascript
-Copy
-Edit
+
 function Person(name) {
   this.name = name;
 }
@@ -71,9 +61,7 @@ const user = new Person("Ada");
 6. Generator Function
 Returns an iterator and can pause/resume using yield.
 
-javascript
-Copy
-Edit
+
 function* count() {
   yield 1;
   yield 2;
@@ -85,9 +73,7 @@ console.log(counter.next().value); // 1
 7. Callback Function
 Passed as an argument to another function.
 
-javascript
-Copy
-Edit
+
 function process(callback) {
   callback();
 }
@@ -98,9 +84,6 @@ Widely used in async code (like setTimeout, fetch, etc.).
 8. Async Function (ES8+)
 Handles asynchronous operations using async/await.
 
-javascript
-Copy
-Edit
 async function fetchData() {
   const res = await fetch("https://api.example.com");
   const data = await res.json();
