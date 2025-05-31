@@ -95,3 +95,27 @@ async function fetchData() {
   console.log(data);
 }
 ```
+# 100 JavaScript Functions 
+## 🔢 Math Functions (1–20)
+```js
+function add(a, b) { return a + b; }
+function subtract(a, b) { return a - b; }
+function multiply(a, b) { return a * b; }
+function divide(a, b) { return b !== 0 ? a / b : null; }
+function square(n) { return n * n; }
+function cube(n) { return n * n * n; }
+function power(base, exp) { return Math.pow(base, exp); }
+function sqrt(n) { return Math.sqrt(n); }
+function abs(n) { return Math.abs(n); }
+function isEven(n) { return n % 2 === 0; }
+function isOdd(n) { return n % 2 !== 0; }
+function round(n) { return Math.round(n); }
+function floor(n) { return Math.floor(n); }
+function ceil(n) { return Math.ceil(n); }
+function max(a, b) { return Math.max(a, b); }
+function min(a, b) { return Math.min(a, b); }
+function randomInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+function factorial(n) { return n <= 1 ? 1 : n * factorial(n - 1); }
+function average(...nums) { return nums.reduce((a, b) => a + b, 0) / nums.length; }
+function clamp(value, min, max) { return Math.max(min, Math.min(max, value)); }
+```
