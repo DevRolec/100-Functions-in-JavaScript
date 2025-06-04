@@ -218,3 +218,11 @@ function addClass(id, className) { const el = getById(id); if (el) el.classList.
 function removeClass(id, className) { const el = getById(id); if (el) el.classList.remove(className); }
 function toggleClass(id, className) { const el = getById(id); if (el) el.classList.toggle(className); }
 ```
+## Basic JS Functions
+
+Function to roll a die
+```js
+function rollDie() {
+  return Math.floor(Math.random() * 6) + 1;
+}
+
