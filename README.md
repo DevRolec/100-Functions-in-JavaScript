@@ -234,3 +234,109 @@ function addNumbers(a, b) {
   return a + b;
 }
 ```
+🎲 2. Dice Roller
+🧠 Concepts: Random numbers, functions, DOM
+What it does: Simulates rolling a 6-sided die and shows the result.
+```js
+function rollDice() {
+    const diceFaces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+    const roll1 = Math.floor(Math.random() * 6);
+    const roll2 = Math.floor(Math.random() * 6);
+
+    document.getElementById("dice1").textContent = diceFaces[roll1];
+    document.getElementById("dice2").textContent = diceFaces[roll2];
+
+    if (roll1 > roll2) {
+        document.getElementById("resultDice").textContent = "🎉  Player 1 wins!";
+    } else if (roll1 < roll2) {
+        document.getElementById("resultDice").textContent = "🎉  Player 2 wins!";
+    } else {
+        document.getElementById("resultDice").textContent = "🤝 It's a tie!";  
+    }   
+}
+```
+3. Rock Paper and Scissors Game
+  🧠 Concepts: Random numbers, functions, DOM
+What it does: Simulates a game experience of making choices between Rock Paper and Scissors. where set rules are implemented
+```js
+
+const playerScoreSpan = document.getElementById("player-score");
+const cpuScoreSpan = document.getElementById("cpu-score");
+const playerChoiceSpan = document.getElementById("player-choice");
+const cpuChoiceSpan = document.getElementById("cpu-choice");
+const resultMessage = document.getElementById("result-message");
+
+const winSound = document.getElementById("win-sound");
+const loseSound = document.getElementById("lose-sound");
+const drawSound = document.getElementById("draw-sound");
+
+let playerScore = 0;
+let cpuScore = 0;
+
+const choices = ["rock", "paper", "scissors"];
+
+document.querySelectorAll(".choice").forEach(button => {
+  button.addEventListener("click", () => {
+    const playerChoice = button.dataset.choice;
+    playerChoiceSpan.textContent = playerChoice;
+
+    // CPU "thinking" animation
+    cpuChoiceSpan.textContent = "...";
+    resultMessage.textContent = "CPU is thinking...";
+
+    setTimeout(() => {
+      const cpuChoice = getCpuChoice();
+      cpuChoiceSpan.textContent = cpuChoice;
+
+      const result = getWinner(playerChoice, cpuChoice);
+      updateScores(result);
+      showResultMessage(result);
+    }, 600);
+  });
+});
+
+function getCpuChoice() {
+  const randIndex = Math.floor(Math.random() * choices.length);
+  return choices[randIndex];
+}
+
+function getWinner(player, cpu) {
+  if (player === cpu) return "draw";
+  if (
+    (player === "rock" && cpu === "scissors") ||
+    (player === "paper" && cpu === "rock") ||
+    (player === "scissors" && cpu === "paper")
+  ) {
+    return "win";
+  }
+  return "lose";
+}
+
+function updateScores(result) {
+  if (result === "win") {
+    playerScore++;
+    playerScoreSpan.textContent = playerScore;
+    winSound.play();
+  } else if (result === "lose") {
+    cpuScore++;
+    cpuScoreSpan.textContent = cpuScore;
+    loseSound.play();
+  } else {
+    drawSound.play();
+  }
+}
+
+function showResultMessage(result) {
+  if (result === "win") {
+    resultMessage.textContent = "🎉 You Win!";
+    resultMessage.style.color = "#00ff88";
+  } else if (result === "lose") {
+    resultMessage.textContent = "💀 You Lose!";
+    resultMessage.style.color = "#ff4444";
+  } else {
+    resultMessage.textContent = "🤝 It's a Draw!";
+    resultMessage.style.color = "#cccccc";
+  }
+}
+
+```
