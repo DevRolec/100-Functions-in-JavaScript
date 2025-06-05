@@ -225,4 +225,12 @@ Function to roll a die
 function rollDie() {
   return Math.floor(Math.random() * 6) + 1;
 }
-
+```
+🚀 1. Number Adder App
+🧠 Concepts: DOM, event handling, basic arithmetic
+What it does: Takes two numbers from input fields and displays their sum when a button is clicked.
+```js
+function addNumbers(a, b) {
+  return a + b;
+}
+```
