@@ -1,3 +1,53 @@
+# 🚀 JavaScript Functions Masterclass
+
+Welcome to the ultimate guide to **JavaScript Functions** — from beginner basics to advanced mastery. This course is project-based, example-driven, and designed to build your skills step by step.
+
+> 🔥 No frameworks. No fluff. Just pure JavaScript functions mastery.
+
+---
+
+## 📚 Course Structure
+
+Each section is a folder with lessons and exercises.
+
+### 🟢 1. Beginner (Function Basics)
+- What is a function?
+- Function declarations vs expressions
+- Parameters and arguments
+- Return values
+- Function scope
+
+### 🟡 2. Intermediate (Function Mechanics)
+- Arrow functions
+- Default parameters
+- Rest and spread with functions
+- Callback functions
+- Higher-order functions
+- Function expressions vs declarations
+
+### 🔴 3. Advanced (Function Power)
+- Closures
+- IIFE (Immediately Invoked Function Expressions)
+- Recursion
+- The `this` keyword inside functions
+- Binding: `.call()`, `.apply()`, `.bind()`
+- Currying and partial application
+- Pure functions and side effects
+
+---
+
+## 🧠 Projects & Challenges
+Each level includes:
+- 📄 `lesson.md` → Theory & explanation
+- 📁 `examples/` → Code examples
+- 🧪 `exercises/` → Practice problems
+- ✅ `solutions/` → Completed answers
+
+---
+
+## 🚦 Getting Started
+
+
 # 100-Functions-in-JavaScript
 ## A function in JavaScript is a reusable block of code that performs a specific task. You can call a function whenever you need it, which helps avoid repeating code.
 ---
