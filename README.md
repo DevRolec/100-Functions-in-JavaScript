@@ -390,3 +390,342 @@ function showResultMessage(result) {
 }
 
 ```
+---
+
+## 1. Beginner: Function Basics
+
+### 🧠 What is a Function?
+
+A function is a reusable block of code that performs a specific task.
+
+### 🔧 Function Declaration
+
+```js
+function greet() {
+  console.log("Hello!");
+}
+```
+
+Call it with:
+
+```js
+greet();
+```
+
+### 🧩 Parameters and Arguments
+
+```js
+function greet(name) {
+  console.log("Hello, " + name + "!");
+}
+
+greet("Alice"); // Hello, Alice!
+```
+
+### 🔁 Return Values
+
+```js
+function add(a, b) {
+  return a + b;
+}
+
+let sum = add(3, 4); // 7
+```
+
+### 🏠 Function Scope
+
+Variables declared inside a function cannot be accessed outside.
+
+```js
+function showScope() {
+  let secret = "hidden";
+  console.log(secret);
+}
+
+// console.log(secret); // Error
+```
+
+### ✅ Beginner Examples
+
+```js
+function sayHi() {
+  console.log("Hi there!");
+}
+
+function multiply(a, b) {
+  return a * b;
+}
+
+function isEven(num) {
+  return num % 2 === 0;
+}
+```
+
+### 💪 Beginner Exercises
+
+1. Write a function that subtracts two numbers.
+2. Write a function that returns "even" or "odd" based on an input number.
+3. Create a function that converts Celsius to Fahrenheit.
+4. Create a function that returns the square of a number.
+
+### 🧠 Beginner Solutions
+
+```js
+function subtract(a, b) {
+  return a - b;
+}
+
+function evenOrOdd(n) {
+  return n % 2 === 0 ? "even" : "odd";
+}
+
+function celsiusToFahrenheit(c) {
+  return (c * 9) / 5 + 32;
+}
+
+function square(n) {
+  return n * n;
+}
+```
+
+---
+
+## 2. Intermediate: Function Mechanics
+
+### ➡️ Arrow Functions
+
+```js
+const greet = (name) => {
+  console.log("Hello, " + name);
+};
+```
+
+Short version:
+
+```js
+const add = (a, b) => a + b;
+```
+
+### 🛠 Default Parameters
+
+```js
+function greet(name = "Stranger") {
+  console.log("Hello, " + name);
+}
+```
+
+### 📦 Rest Parameters
+
+```js
+function sum(...nums) {
+  return nums.reduce((a, b) => a + b, 0);
+}
+```
+
+### 📤 Spread with Functions
+
+```js
+const numbers = [1, 2, 3];
+console.log(Math.max(...numbers)); // 3
+```
+
+### 📞 Callback Functions
+
+```js
+function processUserInput(callback) {
+  const name = "Alice";
+  callback(name);
+}
+```
+
+### 🔁 Higher-Order Functions
+
+```js
+function multiplier(factor) {
+  return function (number) {
+    return number * factor;
+  };
+}
+```
+
+### ✅ Intermediate Examples
+
+```js
+const greet = name => console.log(`Hi, ${name}`);
+
+const average = (...nums) => nums.reduce((a, b) => a + b) / nums.length;
+
+function repeatTask(n, task) {
+  for (let i = 0; i < n; i++) {
+    task();
+  }
+}
+```
+
+### 💪 Intermediate Exercises
+
+1. Create a function that returns the maximum number from any amount of arguments.
+2. Create a higher-order function that accepts a function and a number and calls the function that many times.
+3. Write a function that accepts another function and returns a new function that adds 1 to the result.
+
+### 🧠 Intermediate Solutions
+
+```js
+function maxOf(...nums) {
+  return Math.max(...nums);
+}
+
+function repeat(n, fn) {
+  for (let i = 0; i < n; i++) {
+    fn();
+  }
+}
+
+function plusOneDecorator(fn) {
+  return function (...args) {
+    return fn(...args) + 1;
+  };
+}
+```
+
+---
+
+## 3. Advanced: Function Power
+
+### 🔄 Closures
+
+```js
+function outer() {
+  let count = 0;
+  return function () {
+    count++;
+    return count;
+  };
+}
+```
+
+### ⚡ IIFE
+
+```js
+(function () {
+  console.log("This runs immediately");
+})();
+```
+
+### 🔁 Recursion
+
+```js
+function factorial(n) {
+  if (n === 0) return 1;
+  return n * factorial(n - 1);
+}
+```
+
+### 🔍 The `this` Keyword
+
+```js
+const person = {
+  name: "Alice",
+  greet() {
+    console.log("Hello, I am " + this.name);
+  }
+};
+```
+
+### 🔗 `bind`, `call`, and `apply`
+
+```js
+function sayHi() {
+  console.log("Hi " + this.name);
+}
+
+const user = { name: "Bob" };
+sayHi.call(user);
+sayHi.apply(user);
+const bound = sayHi.bind(user);
+bound();
+```
+
+### 🎯 Currying
+
+```js
+function multiply(a) {
+  return function (b) {
+    return a * b;
+  };
+}
+```
+
+### 🧼 Pure Functions
+
+```js
+function add(a, b) {
+  return a + b;
+}
+```
+
+### ✅ Advanced Examples
+
+```js
+const counter = (() => {
+  let count = 0;
+  return () => ++count;
+})();
+
+function memoize(fn) {
+  const cache = {};
+  return function (x) {
+    if (cache[x]) return cache[x];
+    return (cache[x] = fn(x));
+  };
+}
+```
+
+### 💪 Advanced Exercises
+
+1. Create a recursive function that calculates the nth Fibonacci number.
+2. Create a function that returns a function with a private counter.
+3. Write a memoized version of a slow square function.
+4. Build a curried `add(a)(b)` function.
+
+### 🧠 Advanced Solutions
+
+```js
+function fibonacci(n) {
+  if (n <= 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+function privateCounter() {
+  let count = 0;
+  return function () {
+    return ++count;
+  };
+}
+
+function slowSquare(n) {
+  for (let i = 0; i < 1e8; i++); // simulate delay
+  return n * n;
+}
+
+function memoize(fn) {
+  const cache = {};
+  return function (x) {
+    if (cache[x]) return cache[x];
+    return (cache[x] = fn(x));
+  };
+}
+
+function curriedAdd(a) {
+  return function (b) {
+    return a + b;
+  };
+}
+```
+
+---
+
+## 🏁 Final Thoughts
+
+JavaScript functions are powerful tools — mastering them will make you a better problem solver, developer, and thinker. Practice
+
