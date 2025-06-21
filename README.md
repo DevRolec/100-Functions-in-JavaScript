@@ -604,7 +604,7 @@ function outer() {
 }
 ```
 
-### ⚡ IIFE
+### ⚡ IIFE (Invoked Function Expression )
 
 ```js
 (function () {
