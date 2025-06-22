@@ -513,7 +513,88 @@ function greet(name = "Stranger") {
   console.log("Hello, " + name);
 }
 ```
+## 🏹 JavaScript Arrow Functions Tutorial
+### 📌 What Are Arrow Functions?
+Arrow functions are a shorter syntax for writing functions in JavaScript, introduced in ES6 (ECMAScript 2015).
+They are commonly used in modern JavaScript code because they are concise and work especially well with callbacks and array methods.
 
+✅ Basic Syntax
+```js
+// Traditional Function
+function add(a, b) {
+  return a + b;
+}
+
+// Arrow Function
+const add = (a, b) => a + b;
+```
+🔄 Syntax Variations
+Use Case	Syntax	Example
+No parameters	() => {}	() => console.log("Hello")
+One parameter	param => {}	name => console.log(name)
+Multiple parameters	(a, b) => {}	(x, y) => x * y
+One line return	() => value	(a, b) => a + b
+With block body	() => { return ... }	(a, b) => { return a + b; }
+
+⚠️ Important Notes
+1. No this Binding
+Arrow functions do not have their own this. They inherit this from the enclosing scope.
+
+```js
+function Counter() {
+  this.count = 0;
+  setInterval(() => {
+    this.count++;
+    console.log(this.count);
+  }, 1000);
+}
+```
+new Counter(); // Works as expected
+2. Cannot be used as constructors
+You cannot use arrow functions with new keyword.
+
+```js
+const Person = (name) => {
+  this.name = name;
+};
+// ❌ new Person('John'); // Error!
+```
+3. No arguments Object
+Arrow functions do not have their own arguments object.
+
+🔁 Practice Examples
+Example 1: Add Two Numbers
+```js
+const add = (a, b) => a + b;
+console.log(add(3, 5)); // 8
+```
+Example 2: Square a Number
+```js
+const square = n => n * n;
+console.log(square(4)); // 16
+Example 3: Use with .map()
+
+const nums = [1, 2, 3];
+const doubled = nums.map(n => n * 2);
+console.log(doubled); // [2, 4, 6]
+```
+Example 4: Filtering with .filter()
+```js
+const ages = [12, 17, 19, 24];
+const adults = ages.filter(age => age >= 18);
+console.log(adults); // [19, 24]
+```
+🎯 Practice Tasks
+Try these on your own:
+
+Create an arrow function to check if a number is even.
+
+Use an arrow function inside forEach to print each item in an array.
+
+Write an arrow function to return the length of a string.
+
+
+---
 ### 📦 Rest Parameters
 
 ```js
